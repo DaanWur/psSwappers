@@ -15,7 +15,7 @@ export class Game {
   @Prop({ required: false, default: 0, min: 0, max: 5 })
   rating: number;
 
-  @Prop({ required: true, type: UserSchema })
+  @Prop({ required: false, type: UserSchema })
   owner: User;
 }
 
