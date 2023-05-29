@@ -1,21 +1,24 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { Document } from 'mongoose';
 import { GameSchema, Game } from './game.schema';
 
-export type UserDocument = HydratedDocument<User>;
+export type UserDocument = User & Document;
 
 @Schema()
 export class User {
-  @Prop({ required: true, minlength: 2, maxlength: 15 })
+  @Prop({ unique: true, required: true, minlength: 2, maxlength: 15 })
   nickName: string;
+
+  @Prop({ type: String, required: true, trim: true, minlength: 8 })
+  password: string;
 
   @Prop({ required: true, minlength: 5, maxlength: 20 })
   fullName: string;
 
-  @Prop({ required: true, minlength: 10, maxlength: 10 })
+  @Prop({ unique: true, required: true, minlength: 10, maxlength: 10 })
   phoneNum: string;
 
-  @Prop({ required: true, minlength: 6, maxlength: 30 })
+  @Prop({ unique: true, required: true, minlength: 6, maxlength: 30 })
   mail: string;
 
   @Prop({ type: GameSchema })
