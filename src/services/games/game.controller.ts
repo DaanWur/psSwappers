@@ -7,8 +7,9 @@ import {
   HttpException,
 } from '@nestjs/common';
 // import { CreateCatDto } from './dto/create-cat.dto';
-import { Game } from '../models/game.schema';
+import { Game } from '../../models/game.schema';
 import { GameService } from './game.service';
+import { GameFields } from './dto/game.dto';
 
 @Controller('game')
 export class GameController {

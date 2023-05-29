@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Rental } from '../models/rental.schema';
+import { Rental } from '../../models/rental.schema';
 
 @Injectable()
 export class RentalService {
