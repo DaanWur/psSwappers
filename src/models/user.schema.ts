@@ -1,12 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { GameSchema, Game } from './game.schema';
+import { IsEmail, isEmail } from 'class-validator';
 
 export type UserDocument = User & Document;
 
 @Schema()
 export class User {
-  @Prop({ unique: true, required: true, minlength: 2, maxlength: 15 })
+  @Prop({ unique: true, required: true, minlength: 2, maxlength: 25 })
   nickName: string;
 
   @Prop({ type: String, required: true, trim: true, minlength: 8 })
@@ -19,6 +20,7 @@ export class User {
   phoneNum: string;
 
   @Prop({ unique: true, required: true, minlength: 6, maxlength: 30 })
+  @IsEmail()
   mail: string;
 
   @Prop({ type: GameSchema })

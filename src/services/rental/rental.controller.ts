@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 // import { CreateCatDto } from './dto/create-cat.dto';
-import { Rental } from '../models/rental.schema';
+import { Rental } from 'src/models/rental.schema';
 import { RentalService } from './rental.service';
 
 @Controller('rental')
