@@ -26,7 +26,6 @@ export class GameController {
       );
     }
     return res;
-    // return createGame;
   }
 
   @Get()
